@@ -1,16 +1,17 @@
 #ifndef DESPESAS_H_INCLUDED
 #define DESPESAS_H_INCLUDED
 #include <string>
+#include<iostream>
 
 using namespace std;
 
-class Despesas{
 
-private:
+class Despesas{ //CRIA CLASSE DESPESAS
+
+public:
     std::string tipoDeGastos;
     double valor;
 
-public:
 
     Despesas(std::string tipoDeGastos, double valor);
 
@@ -20,17 +21,18 @@ public:
     double getValor();
     std::string getTipoDeGastos();
 };
-class ControleDeGastos{
+        //FIM DE CLASSE DESPESAS
 
-private:
-    Despesas despesas[];
+class ControleDeGastos{ //CRIA CONTROLE DE GASTOS
 
 public:
+    Despesas despesas; //CRIA ATRIBUTO DO TIPO DA CLASSE DESPESAS DE NOME DESPESAS
 
-    void setDespesas(Despesas despesas[]);
+
+    void setdespesasControle(Despesas despesas); //SETA DESPESAS
     double CalculaTotalDespesa();
-    bool ExisteDespesaDoTipo();
+    bool ExisteDespesaDoTipo(std::string tipoDeGasto); //METODO PARA CVERIFICAR SE HA O MESMO TIPO DE GASTO
 };
 
-
-#endif // DESPESA_H
+        //FIM DE CLASSSE CONTROLE DE DESPESAS
+#endif // DESPESAS_H
