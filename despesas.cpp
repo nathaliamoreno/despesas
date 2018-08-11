@@ -1,13 +1,16 @@
 #include "Despesas.h"
+#include <string>
+#include<iostream>
 
 using namespace std;
 
-Despesas::Despesas(std::string tipoDeGastos, double valor){
+//INICIO METODOS DESPESAS
+Despesas::Despesas(std::string tipoDeGastos, double valor){ //CONTROLE
 
     this->tipoDeGastos = tipoDeGastos;
     this->valor = valor;
 }
-void Despesas::setValor(double idade){
+void Despesas::setValor(double valor){
     this->valor = valor;
 }
 void Despesas::setTipoDeGastos(std::string tipoDeGastos){
@@ -20,30 +23,25 @@ std::string Despesas::getTipoDeGastos(){
     return tipoDeGastos;
 }
 
-void ControleDeGastos::setDespesas(Despesas despesas[]){
-    int i=0;
-    for(i=0;i<3;i++){
-    this->despesas[i] = despesas[i];
-}}
+//INICIO METODOS CONTROLE DE GASTOS
+
+void ControleDeGastos::setdespesasControle(Despesas Despesas){
+    this->despesas = despesas;
+}
+
 double ControleDeGastos::CalculaTotalDespesa(){
 
     double total=0;
-    int i=0;
 
-     for(i = 0; i < 3; i++){
-        total+=despesas[i].getValor();
-    }
-    return total;
+        total+=despesas.getValor(); //SOMANDO VALOR NO TOTAL
+
+return total;
 }
-bool ControleDeGastos::ExisteDespesaDoTipo(){
+bool ControleDeGastos::ExisteDespesaDoTipo(string tipoDeGasto){
 
-    int i=0;
-
-    for(int i = 0; i < 3 ; i++){
-        if(tipoDeGasto == despesas[i].getTipoDeGasto()){
-            return true;
-        }
+    if(tipoDeGasto == despesas.getTipoDeGastos()){ //COMPARARANDO STRINGS
+        return true;
+    }else{
+        return false;
     }
-
-return false;
 }
