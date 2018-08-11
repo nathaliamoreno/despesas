@@ -15,7 +15,7 @@ public:
 
     Despesas(std::string tipoDeGastos, double valor);
 
-    void setValor(double idade);
+    void setValor(double valor);
     void setTipoDeGastos(std::string tipoDeGastos);
 
     double getValor();
